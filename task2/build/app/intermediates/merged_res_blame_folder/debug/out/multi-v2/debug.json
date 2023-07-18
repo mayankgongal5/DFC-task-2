@@ -679,7 +679,7 @@
             "outputFile": "com.example.task2.app-merged_res-11:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/mayankgongal/Desktop/task2/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/mayankgongal/Documents/flutter development/for github 2/DFC-task-2/task2/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -838,7 +838,7 @@
             "outputFile": "com.example.task2.app-merged_res-11:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/mayankgongal/Desktop/task2/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/mayankgongal/Documents/flutter development/for github 2/DFC-task-2/task2/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

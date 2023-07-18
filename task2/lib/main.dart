@@ -41,6 +41,7 @@ Future launchURL(String url) async {
   }
 }
 
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -126,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: InkWell(
                         onTap: () {
                           // make sure you add the url with the http://
-                          launchURL("https://www.instagram.com/hell_ew.dmg");
+                          launchURL("http://www.instagram.com/hell_ew.dmg");
                         },
                         child: Container(
                             height: 100,
@@ -144,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Flexible(
                       child: InkWell(
                         onTap: () {
-                          // _launchURL("https://twitter.com/mayank_gongal");
+                          launchURL("https://twitter.com/mayank_gongal");
                         },
                         child: Container(
                             height: 100,
@@ -172,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Flexible(
                         child: InkWell(
                           onTap: () {
-                            // _launchURL("https://github.com/mayankgongal5");
+                            launchURL("http://github.com/mayankgongal5");
                           },
                           child: Container(
                               height: 100,
@@ -190,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Flexible(
                         child: InkWell(
                           onTap: () {
-                            // _launchURL("https://www.linkedin.com/in/mayank-gongal-0bb742256/");
+                             launchURL("http://www.linkedin.com/in/mayank-gongal-0bb742256");
                           },
                           child: Container(
                               height: 100,
