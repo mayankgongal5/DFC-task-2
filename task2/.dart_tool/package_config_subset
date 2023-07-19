@@ -30,6 +30,14 @@ flutter_lints
 2.18
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/flutter_lints-2.0.2/
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/flutter_lints-2.0.2/lib/
+http
+3.0
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/http-1.1.0/
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/http-1.1.0/lib/
+http_parser
+2.12
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/http_parser-4.0.2/
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib/
 js
 2.19
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/js-0.6.7/
@@ -50,6 +58,10 @@ meta
 2.12
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/meta-1.9.1/
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/meta-1.9.1/lib/
+open_url
+2.12
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/open_url-2.0.1/
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/open_url-2.0.1/lib/
 path
 2.12
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/path-1.8.3/
@@ -90,6 +102,10 @@ test_api
 2.18
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/test_api-0.5.1/
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/test_api-0.5.1/lib/
+typed_data
+2.17
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/typed_data-1.3.2/
+file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib/
 url_launcher
 3.0
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/url_launcher-6.1.12/
@@ -128,8 +144,8 @@ file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/vector_math-2.1.4/
 file:///Users/mayankgongal/.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib/
 task2
 3.0
-file:///Users/mayankgongal/Desktop/task2/
-file:///Users/mayankgongal/Desktop/task2/lib/
+file:///Users/mayankgongal/Documents/flutter%20development/for%20github%202/DFC-task-2/task2/
+file:///Users/mayankgongal/Documents/flutter%20development/for%20github%202/DFC-task-2/task2/lib/
 sky_engine
 3.0
 file:///Users/mayankgongal/flutter/bin/cache/pkg/sky_engine/
