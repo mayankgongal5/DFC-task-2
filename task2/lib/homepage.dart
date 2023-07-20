@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart'as http;
 
+import 'main.dart';
 import 'modle/repo.dart';
 class homepage extends StatefulWidget{
   const homepage({Key? key}): super(key: key);
@@ -14,50 +15,82 @@ class _homepagestate extends State<homepage> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: getData(),
-      builder: (context , snapshot) {
-        if(snapshot.hasData){
-          return ListView.builder(
-              itemCount: samplepost.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Flexible(
-                    child: Container(
-                      height: 300,
-                      color: Colors.green,
-                      padding:  EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                      child:  Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('name: ${samplepost[index].name}',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text('html_url : ${samplepost[index].htmlUrl}',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text('description: ${samplepost[index].description}',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text('strgazerscount: ${samplepost[index].stargazersCount}',
-                              style: TextStyle(fontSize: 20),
-                            )
+    return Scaffold(
+       appBar: AppBar(
+         backgroundColor:Theme.of(context).colorScheme.inversePrimary,
 
-                          ]
-                      ),
-                    ),
-                  ),
-                );
-              }
-          );
-        }
-        else{
-          return Center(child: CircularProgressIndicator (),
-          );
-        }
-      }
+           title: const Text('GITHUB REPOSITORIES'),
+       ),
+      body:
+        Center(
+        child: FutureBuilder(
+          future: getData(),
+          builder: (context , snapshot) {
+            if(snapshot.hasData){
+              return ListView.builder(
+                  itemCount: samplepost.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 300,
+                          color: Colors.black,
+                          padding:  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                          child:  Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Name:${samplepost[index].name}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                      fontSize: 20),
+                                ),
+                                Text('Visibility : ${samplepost[index].visibility}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                      fontSize: 15),
+                                ),
+                                Text('description: ${samplepost[index].description}',
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15),
+                                ),
+                                Text('default branch: ${samplepost[index].defaultBranch}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                      fontSize: 15),
+                                ),
+                                Text('Lisence: ${samplepost[index].license}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                      fontSize: 15),
+                                ),
+                                Text('Language: ${samplepost[index].language}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                      fontSize: 15),
+                                ),
+                                ElevatedButton(onPressed:(){
+
+                                    launchURL("${samplepost[index].htmlUrl}");
+
+                                }, child: const Text('Go to this Repository'), )
+
+                              ]
+                          ),
+                        ),
+
+                    );
+                  }
+              );
+            }
+            else{
+              return const Center(child: CircularProgressIndicator (),
+              );
+            }
+          }
+        ),
+      ),
     );
   }
 

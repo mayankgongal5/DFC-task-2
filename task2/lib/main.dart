@@ -86,44 +86,71 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.tealAccent,
-        title: const Text("heeelllooo"),
+        title: const Text("DFC-Task 2"),
       ),
       body: Container(
         decoration: const BoxDecoration(color: Colors.black),
         child: SlidingUpPanel(
+          maxHeight: 400,
+          backdropEnabled: true,
+          backdropColor: Colors.black,
+          backdropOpacity: 0.6,
+          backdropTapClosesPanel: true,
           color: Colors.black,
           renderPanelSheet: false,
           panel: _floatingPanel(),
           collapsed: _floatingCollapsed(),
-          body: const Center(
-            child: Text("This is the Widget behind the slidiggng panel"),
+          body:  Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    height: 250,
+                    width: 250,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(120),
+                        image: const DecorationImage(
+                         image: AssetImage('assets/pictures/my.jpeg'),
+                         fit: BoxFit.scaleDown,
+                     ),
+                  )
+                ),
+              ),
+
+            ],
           ),
-        ),
       ),
+      )
     );
   }
 
   Widget _floatingCollapsed() {
-    return Column(
-      children: [
-        Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(24.0), topRight: Radius.circular(24.0)),
-          ),
-          margin: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
-          child: const Center(
-            child: Text(
-              "Connect With Me",
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: (30),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(24.0), topRight: Radius.circular(24.0)),
+            ),
+            margin: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
+            child: const Center(
+              child: Text(
+                "Connect With Me",
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: (30),
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -148,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Flexible(
+                    Expanded(
                       child: InkWell(
                         onTap: () {
                           // make sure you add the url with the http://
@@ -159,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             width: 100,
                             decoration: BoxDecoration(
                               image: const DecorationImage(
-                                image: AssetImage('assets/icons/inst.png'),
+                                image: AssetImage('assets/icons/insta2.png'),
                                 fit: BoxFit.scaleDown,
                               ),
                               borderRadius: BorderRadius.circular(10),
@@ -167,7 +194,25 @@ class _MyHomePageState extends State<MyHomePage> {
                             )),
                       ),
                     ),
-                    Flexible(
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          launchURL("https://youtube.com/@MayankGongal5");
+                        },
+                        child: Container(
+                            height: 100,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                image: AssetImage('assets/icons/youtube.png'),
+                                fit: BoxFit.scaleDown,
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                            )),
+                      ),
+                    ),
+                    Expanded(
                       child: InkWell(
                         onTap: () {
                           launchURL("https://twitter.com/mayank_gongal");
@@ -177,11 +222,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             width: 100,
                             decoration: BoxDecoration(
                               image: const DecorationImage(
-                                image: AssetImage('assets/icons/wtit.png'),
-                                fit: BoxFit.scaleDown,
+                                image: AssetImage('assets/icons/twit2.png'),
+                                fit: BoxFit.fitHeight,
                               ),
                               borderRadius: BorderRadius.circular(10),
-                              color: Colors.blue,
+                              color: Colors.white,
                             )),
                       ),
                     ),
@@ -195,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Flexible(
+                      Expanded(
                         child: InkWell(
                           onTap: () {
                             launchURL("http://github.com/mayankgongal5");
@@ -205,15 +250,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 100,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/icons/git.png'),
+                                  image: AssetImage('assets/icons/git2.png'),
                                   fit: BoxFit.scaleDown,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.black,
+                                color: Colors.white,
                               )),
                         ),
                       ),
-                      Flexible(
+                      Expanded(
                         child: InkWell(
                           onTap: () {
                              launchURL("https://www.linkedin.com/in/mayank-gongal-0bb742256");
@@ -223,15 +268,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 100,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/icons/link.png'),
-                                  fit: BoxFit.scaleDown,
+                                  image: AssetImage('assets/icons/link2.png'),
+                                  fit: BoxFit.contain,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white,
                               )),
                         ),
                       ),
-                      Flexible(
+                      Expanded(
                         child: InkWell(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder:(BuildContext context){
@@ -243,8 +288,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 100,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/icons/link.png'),
-                                  fit: BoxFit.scaleDown,
+                                  image: AssetImage('assets/icons/api.png'),
+                                  fit: BoxFit.contain,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white,
