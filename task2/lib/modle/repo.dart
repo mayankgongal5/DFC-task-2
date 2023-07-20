@@ -9,158 +9,166 @@ List<Welcome> welcomeFromJson(String str) => List<Welcome>.from(json.decode(str)
 String welcomeToJson(List<Welcome> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Welcome {
-  int id;
-  String nodeId;
-  String name;
-  String fullName;
-  Owner owner;
-  bool private;
-  String htmlUrl;
-  String description;
-  bool fork;
-  String url;
-  String archiveUrl;
-  String assigneesUrl;
-  String blobsUrl;
-  String branchesUrl;
-  String collaboratorsUrl;
-  String commentsUrl;
-  String commitsUrl;
-  String compareUrl;
-  String contentsUrl;
-  String contributorsUrl;
-  String deploymentsUrl;
-  String downloadsUrl;
-  String eventsUrl;
-  String forksUrl;
-  String gitCommitsUrl;
-  String gitRefsUrl;
-  String gitTagsUrl;
-  String gitUrl;
-  String issueCommentUrl;
-  String issueEventsUrl;
-  String issuesUrl;
-  String keysUrl;
-  String labelsUrl;
-  String languagesUrl;
-  String mergesUrl;
-  String milestonesUrl;
-  String notificationsUrl;
-  String pullsUrl;
-  String releasesUrl;
-  String sshUrl;
-  String stargazersUrl;
-  String statusesUrl;
-  String subscribersUrl;
-  String subscriptionUrl;
-  String tagsUrl;
-  String teamsUrl;
-  String treesUrl;
-  String cloneUrl;
-  String mirrorUrl;
-  String hooksUrl;
-  String svnUrl;
-  String homepage;
-  dynamic language;
-  int forksCount;
-  int stargazersCount;
-  int watchersCount;
-  int size;
-  String defaultBranch;
-  int openIssuesCount;
-  bool isTemplate;
-  List<String> topics;
-  bool hasIssues;
-  bool hasProjects;
-  bool hasWiki;
-  bool hasPages;
-  bool hasDownloads;
-  bool hasDiscussions;
-  bool archived;
-  bool disabled;
-  String visibility;
-  DateTime pushedAt;
-  DateTime createdAt;
-  DateTime updatedAt;
-  Permissions permissions;
-  SecurityAndAnalysis securityAndAnalysis;
+  int? id;
+  String? nodeId;
+  String? name;
+  String? fullName;
+  bool? private;
+  Owner? owner;
+  String? htmlUrl;
+  String? description;
+  bool? fork;
+  String? url;
+  String? forksUrl;
+  String? keysUrl;
+  String? collaboratorsUrl;
+  String? teamsUrl;
+  String? hooksUrl;
+  String? issueEventsUrl;
+  String? eventsUrl;
+  String? assigneesUrl;
+  String? branchesUrl;
+  String? tagsUrl;
+  String? blobsUrl;
+  String? gitTagsUrl;
+  String? gitRefsUrl;
+  String? treesUrl;
+  String? statusesUrl;
+  String? languagesUrl;
+  String? stargazersUrl;
+  String? contributorsUrl;
+  String? subscribersUrl;
+  String? subscriptionUrl;
+  String? commitsUrl;
+  String? gitCommitsUrl;
+  String? commentsUrl;
+  String? issueCommentUrl;
+  String? contentsUrl;
+  String? compareUrl;
+  String? mergesUrl;
+  String? archiveUrl;
+  String? downloadsUrl;
+  String? issuesUrl;
+  String? pullsUrl;
+  String? milestonesUrl;
+  String? notificationsUrl;
+  String? labelsUrl;
+  String? releasesUrl;
+  String? deploymentsUrl;
+  DateTime? createdAt;
+  DateTime? updatedAt;
+  DateTime? pushedAt;
+  String? gitUrl;
+  String? sshUrl;
+  String? cloneUrl;
+  String? svnUrl;
+  dynamic homepage;
+  int? size;
+  int? stargazersCount;
+  int? watchersCount;
+  String? language;
+  bool? hasIssues;
+  bool? hasProjects;
+  bool? hasDownloads;
+  bool? hasWiki;
+  bool? hasPages;
+  bool? hasDiscussions;
+  int? forksCount;
+  dynamic mirrorUrl;
+  bool? archived;
+  bool? disabled;
+  int? openIssuesCount;
+  dynamic license;
+  bool? allowForking;
+  bool? isTemplate;
+  bool? webCommitSignoffRequired;
+  List<dynamic>? topics;
+  String? visibility;
+  int? forks;
+  int? openIssues;
+  int? watchers;
+  String? defaultBranch;
 
   Welcome({
-    required this.id,
-    required this.nodeId,
-    required this.name,
-    required this.fullName,
-    required this.owner,
-    required this.private,
-    required this.htmlUrl,
-    required this.description,
-    required this.fork,
-    required this.url,
-    required this.archiveUrl,
-    required this.assigneesUrl,
-    required this.blobsUrl,
-    required this.branchesUrl,
-    required this.collaboratorsUrl,
-    required this.commentsUrl,
-    required this.commitsUrl,
-    required this.compareUrl,
-    required this.contentsUrl,
-    required this.contributorsUrl,
-    required this.deploymentsUrl,
-    required this.downloadsUrl,
-    required this.eventsUrl,
-    required this.forksUrl,
-    required this.gitCommitsUrl,
-    required this.gitRefsUrl,
-    required this.gitTagsUrl,
-    required this.gitUrl,
-    required this.issueCommentUrl,
-    required this.issueEventsUrl,
-    required this.issuesUrl,
-    required this.keysUrl,
-    required this.labelsUrl,
-    required this.languagesUrl,
-    required this.mergesUrl,
-    required this.milestonesUrl,
-    required this.notificationsUrl,
-    required this.pullsUrl,
-    required this.releasesUrl,
-    required this.sshUrl,
-    required this.stargazersUrl,
-    required this.statusesUrl,
-    required this.subscribersUrl,
-    required this.subscriptionUrl,
-    required this.tagsUrl,
-    required this.teamsUrl,
-    required this.treesUrl,
-    required this.cloneUrl,
-    required this.mirrorUrl,
-    required this.hooksUrl,
-    required this.svnUrl,
-    required this.homepage,
+    this.id,
+    this.nodeId,
+    this.name,
+    this.fullName,
+    this.private,
+    this.owner,
+    this.htmlUrl,
+    this.description,
+    this.fork,
+    this.url,
+    this.forksUrl,
+    this.keysUrl,
+    this.collaboratorsUrl,
+    this.teamsUrl,
+    this.hooksUrl,
+    this.issueEventsUrl,
+    this.eventsUrl,
+    this.assigneesUrl,
+    this.branchesUrl,
+    this.tagsUrl,
+    this.blobsUrl,
+    this.gitTagsUrl,
+    this.gitRefsUrl,
+    this.treesUrl,
+    this.statusesUrl,
+    this.languagesUrl,
+    this.stargazersUrl,
+    this.contributorsUrl,
+    this.subscribersUrl,
+    this.subscriptionUrl,
+    this.commitsUrl,
+    this.gitCommitsUrl,
+    this.commentsUrl,
+    this.issueCommentUrl,
+    this.contentsUrl,
+    this.compareUrl,
+    this.mergesUrl,
+    this.archiveUrl,
+    this.downloadsUrl,
+    this.issuesUrl,
+    this.pullsUrl,
+    this.milestonesUrl,
+    this.notificationsUrl,
+    this.labelsUrl,
+    this.releasesUrl,
+    this.deploymentsUrl,
+    this.createdAt,
+    this.updatedAt,
+    this.pushedAt,
+    this.gitUrl,
+    this.sshUrl,
+    this.cloneUrl,
+    this.svnUrl,
+    this.homepage,
+    this.size,
+    this.stargazersCount,
+    this.watchersCount,
     this.language,
-    required this.forksCount,
-    required this.stargazersCount,
-    required this.watchersCount,
-    required this.size,
-    required this.defaultBranch,
-    required this.openIssuesCount,
-    required this.isTemplate,
-    required this.topics,
-    required this.hasIssues,
-    required this.hasProjects,
-    required this.hasWiki,
-    required this.hasPages,
-    required this.hasDownloads,
-    required this.hasDiscussions,
-    required this.archived,
-    required this.disabled,
-    required this.visibility,
-    required this.pushedAt,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.permissions,
-    required this.securityAndAnalysis,
+    this.hasIssues,
+    this.hasProjects,
+    this.hasDownloads,
+    this.hasWiki,
+    this.hasPages,
+    this.hasDiscussions,
+    this.forksCount,
+    this.mirrorUrl,
+    this.archived,
+    this.disabled,
+    this.openIssuesCount,
+    this.license,
+    this.allowForking,
+    this.isTemplate,
+    this.webCommitSignoffRequired,
+    this.topics,
+    this.visibility,
+    this.forks,
+    this.openIssues,
+    this.watchers,
+    this.defaultBranch,
   });
 
   factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
@@ -168,77 +176,81 @@ class Welcome {
     nodeId: json["node_id"],
     name: json["name"],
     fullName: json["full_name"],
-    owner: Owner.fromJson(json["owner"]),
     private: json["private"],
+    owner: json["owner"] == null ? null : Owner.fromJson(json["owner"]),
     htmlUrl: json["html_url"],
     description: json["description"],
     fork: json["fork"],
     url: json["url"],
-    archiveUrl: json["archive_url"],
-    assigneesUrl: json["assignees_url"],
-    blobsUrl: json["blobs_url"],
-    branchesUrl: json["branches_url"],
-    collaboratorsUrl: json["collaborators_url"],
-    commentsUrl: json["comments_url"],
-    commitsUrl: json["commits_url"],
-    compareUrl: json["compare_url"],
-    contentsUrl: json["contents_url"],
-    contributorsUrl: json["contributors_url"],
-    deploymentsUrl: json["deployments_url"],
-    downloadsUrl: json["downloads_url"],
-    eventsUrl: json["events_url"],
     forksUrl: json["forks_url"],
-    gitCommitsUrl: json["git_commits_url"],
-    gitRefsUrl: json["git_refs_url"],
-    gitTagsUrl: json["git_tags_url"],
-    gitUrl: json["git_url"],
-    issueCommentUrl: json["issue_comment_url"],
-    issueEventsUrl: json["issue_events_url"],
-    issuesUrl: json["issues_url"],
     keysUrl: json["keys_url"],
-    labelsUrl: json["labels_url"],
-    languagesUrl: json["languages_url"],
-    mergesUrl: json["merges_url"],
-    milestonesUrl: json["milestones_url"],
-    notificationsUrl: json["notifications_url"],
-    pullsUrl: json["pulls_url"],
-    releasesUrl: json["releases_url"],
-    sshUrl: json["ssh_url"],
-    stargazersUrl: json["stargazers_url"],
+    collaboratorsUrl: json["collaborators_url"],
+    teamsUrl: json["teams_url"],
+    hooksUrl: json["hooks_url"],
+    issueEventsUrl: json["issue_events_url"],
+    eventsUrl: json["events_url"],
+    assigneesUrl: json["assignees_url"],
+    branchesUrl: json["branches_url"],
+    tagsUrl: json["tags_url"],
+    blobsUrl: json["blobs_url"],
+    gitTagsUrl: json["git_tags_url"],
+    gitRefsUrl: json["git_refs_url"],
+    treesUrl: json["trees_url"],
     statusesUrl: json["statuses_url"],
+    languagesUrl: json["languages_url"],
+    stargazersUrl: json["stargazers_url"],
+    contributorsUrl: json["contributors_url"],
     subscribersUrl: json["subscribers_url"],
     subscriptionUrl: json["subscription_url"],
-    tagsUrl: json["tags_url"],
-    teamsUrl: json["teams_url"],
-    treesUrl: json["trees_url"],
+    commitsUrl: json["commits_url"],
+    gitCommitsUrl: json["git_commits_url"],
+    commentsUrl: json["comments_url"],
+    issueCommentUrl: json["issue_comment_url"],
+    contentsUrl: json["contents_url"],
+    compareUrl: json["compare_url"],
+    mergesUrl: json["merges_url"],
+    archiveUrl: json["archive_url"],
+    downloadsUrl: json["downloads_url"],
+    issuesUrl: json["issues_url"],
+    pullsUrl: json["pulls_url"],
+    milestonesUrl: json["milestones_url"],
+    notificationsUrl: json["notifications_url"],
+    labelsUrl: json["labels_url"],
+    releasesUrl: json["releases_url"],
+    deploymentsUrl: json["deployments_url"],
+    createdAt: json["created_at"] == null ? null : DateTime.parse(json["created_at"]),
+    updatedAt: json["updated_at"] == null ? null : DateTime.parse(json["updated_at"]),
+    pushedAt: json["pushed_at"] == null ? null : DateTime.parse(json["pushed_at"]),
+    gitUrl: json["git_url"],
+    sshUrl: json["ssh_url"],
     cloneUrl: json["clone_url"],
-    mirrorUrl: json["mirror_url"],
-    hooksUrl: json["hooks_url"],
     svnUrl: json["svn_url"],
     homepage: json["homepage"],
-    language: json["language"],
-    forksCount: json["forks_count"],
+    size: json["size"],
     stargazersCount: json["stargazers_count"],
     watchersCount: json["watchers_count"],
-    size: json["size"],
-    defaultBranch: json["default_branch"],
-    openIssuesCount: json["open_issues_count"],
-    isTemplate: json["is_template"],
-    topics: List<String>.from(json["topics"].map((x) => x)),
+    language: json["language"],
     hasIssues: json["has_issues"],
     hasProjects: json["has_projects"],
+    hasDownloads: json["has_downloads"],
     hasWiki: json["has_wiki"],
     hasPages: json["has_pages"],
-    hasDownloads: json["has_downloads"],
     hasDiscussions: json["has_discussions"],
+    forksCount: json["forks_count"],
+    mirrorUrl: json["mirror_url"],
     archived: json["archived"],
     disabled: json["disabled"],
+    openIssuesCount: json["open_issues_count"],
+    license: json["license"],
+    allowForking: json["allow_forking"],
+    isTemplate: json["is_template"],
+    webCommitSignoffRequired: json["web_commit_signoff_required"],
+    topics: json["topics"] == null ? [] : List<dynamic>.from(json["topics"]!.map((x) => x)),
     visibility: json["visibility"],
-    pushedAt: DateTime.parse(json["pushed_at"]),
-    createdAt: DateTime.parse(json["created_at"]),
-    updatedAt: DateTime.parse(json["updated_at"]),
-    permissions: Permissions.fromJson(json["permissions"]),
-    securityAndAnalysis: SecurityAndAnalysis.fromJson(json["security_and_analysis"]),
+    forks: json["forks"],
+    openIssues: json["open_issues"],
+    watchers: json["watchers"],
+    defaultBranch: json["default_branch"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -246,119 +258,123 @@ class Welcome {
     "node_id": nodeId,
     "name": name,
     "full_name": fullName,
-    "owner": owner.toJson(),
     "private": private,
+    "owner": owner?.toJson(),
     "html_url": htmlUrl,
     "description": description,
     "fork": fork,
     "url": url,
-    "archive_url": archiveUrl,
-    "assignees_url": assigneesUrl,
-    "blobs_url": blobsUrl,
-    "branches_url": branchesUrl,
-    "collaborators_url": collaboratorsUrl,
-    "comments_url": commentsUrl,
-    "commits_url": commitsUrl,
-    "compare_url": compareUrl,
-    "contents_url": contentsUrl,
-    "contributors_url": contributorsUrl,
-    "deployments_url": deploymentsUrl,
-    "downloads_url": downloadsUrl,
-    "events_url": eventsUrl,
     "forks_url": forksUrl,
-    "git_commits_url": gitCommitsUrl,
-    "git_refs_url": gitRefsUrl,
-    "git_tags_url": gitTagsUrl,
-    "git_url": gitUrl,
-    "issue_comment_url": issueCommentUrl,
-    "issue_events_url": issueEventsUrl,
-    "issues_url": issuesUrl,
     "keys_url": keysUrl,
-    "labels_url": labelsUrl,
-    "languages_url": languagesUrl,
-    "merges_url": mergesUrl,
-    "milestones_url": milestonesUrl,
-    "notifications_url": notificationsUrl,
-    "pulls_url": pullsUrl,
-    "releases_url": releasesUrl,
-    "ssh_url": sshUrl,
-    "stargazers_url": stargazersUrl,
+    "collaborators_url": collaboratorsUrl,
+    "teams_url": teamsUrl,
+    "hooks_url": hooksUrl,
+    "issue_events_url": issueEventsUrl,
+    "events_url": eventsUrl,
+    "assignees_url": assigneesUrl,
+    "branches_url": branchesUrl,
+    "tags_url": tagsUrl,
+    "blobs_url": blobsUrl,
+    "git_tags_url": gitTagsUrl,
+    "git_refs_url": gitRefsUrl,
+    "trees_url": treesUrl,
     "statuses_url": statusesUrl,
+    "languages_url": languagesUrl,
+    "stargazers_url": stargazersUrl,
+    "contributors_url": contributorsUrl,
     "subscribers_url": subscribersUrl,
     "subscription_url": subscriptionUrl,
-    "tags_url": tagsUrl,
-    "teams_url": teamsUrl,
-    "trees_url": treesUrl,
+    "commits_url": commitsUrl,
+    "git_commits_url": gitCommitsUrl,
+    "comments_url": commentsUrl,
+    "issue_comment_url": issueCommentUrl,
+    "contents_url": contentsUrl,
+    "compare_url": compareUrl,
+    "merges_url": mergesUrl,
+    "archive_url": archiveUrl,
+    "downloads_url": downloadsUrl,
+    "issues_url": issuesUrl,
+    "pulls_url": pullsUrl,
+    "milestones_url": milestonesUrl,
+    "notifications_url": notificationsUrl,
+    "labels_url": labelsUrl,
+    "releases_url": releasesUrl,
+    "deployments_url": deploymentsUrl,
+    "created_at": createdAt?.toIso8601String(),
+    "updated_at": updatedAt?.toIso8601String(),
+    "pushed_at": pushedAt?.toIso8601String(),
+    "git_url": gitUrl,
+    "ssh_url": sshUrl,
     "clone_url": cloneUrl,
-    "mirror_url": mirrorUrl,
-    "hooks_url": hooksUrl,
     "svn_url": svnUrl,
     "homepage": homepage,
-    "language": language,
-    "forks_count": forksCount,
+    "size": size,
     "stargazers_count": stargazersCount,
     "watchers_count": watchersCount,
-    "size": size,
-    "default_branch": defaultBranch,
-    "open_issues_count": openIssuesCount,
-    "is_template": isTemplate,
-    "topics": List<dynamic>.from(topics.map((x) => x)),
+    "language": language,
     "has_issues": hasIssues,
     "has_projects": hasProjects,
+    "has_downloads": hasDownloads,
     "has_wiki": hasWiki,
     "has_pages": hasPages,
-    "has_downloads": hasDownloads,
     "has_discussions": hasDiscussions,
+    "forks_count": forksCount,
+    "mirror_url": mirrorUrl,
     "archived": archived,
     "disabled": disabled,
+    "open_issues_count": openIssuesCount,
+    "license": license,
+    "allow_forking": allowForking,
+    "is_template": isTemplate,
+    "web_commit_signoff_required": webCommitSignoffRequired,
+    "topics": topics == null ? [] : List<dynamic>.from(topics!.map((x) => x)),
     "visibility": visibility,
-    "pushed_at": pushedAt.toIso8601String(),
-    "created_at": createdAt.toIso8601String(),
-    "updated_at": updatedAt.toIso8601String(),
-    "permissions": permissions.toJson(),
-    "security_and_analysis": securityAndAnalysis.toJson(),
+    "forks": forks,
+    "open_issues": openIssues,
+    "watchers": watchers,
+    "default_branch": defaultBranch,
   };
 }
 
 class Owner {
-  String login;
-  int id;
-  String nodeId;
-  String avatarUrl;
-  String gravatarId;
-  String url;
-  String htmlUrl;
-  String followersUrl;
-  String followingUrl;
-  String gistsUrl;
-  String starredUrl;
-  String subscriptionsUrl;
-  String organizationsUrl;
-  String reposUrl;
-  String eventsUrl;
-  String receivedEventsUrl;
-  String type;
-  bool siteAdmin;
+  String? login;
+  int? id;
+  String? nodeId;
+  String? avatarUrl;
+  String? gravatarId;
+  String? url;
+  String? htmlUrl;
+  String? followersUrl;
+  String? followingUrl;
+  String? gistsUrl;
+  String? starredUrl;
+  String? subscriptionsUrl;
+  String? organizationsUrl;
+  String? reposUrl;
+  String? eventsUrl;
+  String? receivedEventsUrl;
+  String? type;
+  bool? siteAdmin;
 
   Owner({
-    required this.login,
-    required this.id,
-    required this.nodeId,
-    required this.avatarUrl,
-    required this.gravatarId,
-    required this.url,
-    required this.htmlUrl,
-    required this.followersUrl,
-    required this.followingUrl,
-    required this.gistsUrl,
-    required this.starredUrl,
-    required this.subscriptionsUrl,
-    required this.organizationsUrl,
-    required this.reposUrl,
-    required this.eventsUrl,
-    required this.receivedEventsUrl,
-    required this.type,
-    required this.siteAdmin,
+    this.login,
+    this.id,
+    this.nodeId,
+    this.avatarUrl,
+    this.gravatarId,
+    this.url,
+    this.htmlUrl,
+    this.followersUrl,
+    this.followingUrl,
+    this.gistsUrl,
+    this.starredUrl,
+    this.subscriptionsUrl,
+    this.organizationsUrl,
+    this.reposUrl,
+    this.eventsUrl,
+    this.receivedEventsUrl,
+    this.type,
+    this.siteAdmin,
   });
 
   factory Owner.fromJson(Map<String, dynamic> json) => Owner(
@@ -401,69 +417,5 @@ class Owner {
     "received_events_url": receivedEventsUrl,
     "type": type,
     "site_admin": siteAdmin,
-  };
-}
-
-class Permissions {
-  bool admin;
-  bool push;
-  bool pull;
-
-  Permissions({
-    required this.admin,
-    required this.push,
-    required this.pull,
-  });
-
-  factory Permissions.fromJson(Map<String, dynamic> json) => Permissions(
-    admin: json["admin"],
-    push: json["push"],
-    pull: json["pull"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "admin": admin,
-    "push": push,
-    "pull": pull,
-  };
-}
-
-class SecurityAndAnalysis {
-  AdvancedSecurity advancedSecurity;
-  AdvancedSecurity secretScanning;
-  AdvancedSecurity secretScanningPushProtection;
-
-  SecurityAndAnalysis({
-    required this.advancedSecurity,
-    required this.secretScanning,
-    required this.secretScanningPushProtection,
-  });
-
-  factory SecurityAndAnalysis.fromJson(Map<String, dynamic> json) => SecurityAndAnalysis(
-    advancedSecurity: AdvancedSecurity.fromJson(json["advanced_security"]),
-    secretScanning: AdvancedSecurity.fromJson(json["secret_scanning"]),
-    secretScanningPushProtection: AdvancedSecurity.fromJson(json["secret_scanning_push_protection"]),
-  );
-
-  Map<String, dynamic> toJson() => {
-    "advanced_security": advancedSecurity.toJson(),
-    "secret_scanning": secretScanning.toJson(),
-    "secret_scanning_push_protection": secretScanningPushProtection.toJson(),
-  };
-}
-
-class AdvancedSecurity {
-  String status;
-
-  AdvancedSecurity({
-    required this.status,
-  });
-
-  factory AdvancedSecurity.fromJson(Map<String, dynamic> json) => AdvancedSecurity(
-    status: json["status"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "status": status,
   };
 }

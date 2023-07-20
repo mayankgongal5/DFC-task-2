@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:task2/homepage.dart';
 import 'package:task2/modle/repo.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:open_url/open_url.dart';
@@ -151,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: InkWell(
                         onTap: () {
                           // make sure you add the url with the http://
-                          launchURL("https://www.instagram.com/hell_ew.dmg/");
+                          launchURL("https://api.github.com/users/mayankgongal5/repos");
                         },
                         child: Container(
                             height: 100,
@@ -230,10 +231,31 @@ class _MyHomePageState extends State<MyHomePage> {
                               )),
                         ),
                       ),
+                      Flexible(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder:(BuildContext context){
+                              return homepage();
+                            }));
+                          },
+                          child: Container(
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage('assets/icons/link.png'),
+                                  fit: BoxFit.scaleDown,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                              )),
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
+
             ],
           ),
         ));
