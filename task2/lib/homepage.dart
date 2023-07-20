@@ -19,7 +19,7 @@ class _homepagestate extends State<homepage> {
        appBar: AppBar(
          backgroundColor: Colors.black,
 
-           title: const Text('GITHUB REPOSITORIES',
+           title: const Text('MY GITHUB REPOSITORIES',
            style: TextStyle(
              color: Colors.white,
            ),),
@@ -37,29 +37,43 @@ class _homepagestate extends State<homepage> {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                         child: Container(
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(25.0)
+                            ),
+
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [Colors.black,Colors.teal]
+                            )
+                          ),
                           height: 300,
-                          color: Colors.black,
+
                           padding:  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                           child:  Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Name:${samplepost[index].name}',
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                      fontSize: 20),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10.0),
+                                  child: Text('${samplepost[index].name}',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                        fontSize: 25),
+                                  ),
                                 ),
                                 Text('Visibility : ${samplepost[index].visibility}',
                                   style: const TextStyle(
                                     color: Colors.white,
                                       fontSize: 15),
                                 ),
-                                Text('description: ${samplepost[index].description}',
+                                Text('Description: ${samplepost[index].description}',
                                   style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 15),
+                                  maxLines: 1,
                                 ),
-                                Text('default branch: ${samplepost[index].defaultBranch}',
+                                Text('Default branch: ${samplepost[index].defaultBranch}',
                                   style: const TextStyle(
                                     color: Colors.white,
                                       fontSize: 15),
