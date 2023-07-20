@@ -17,9 +17,13 @@ class _homepagestate extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
-         backgroundColor:Theme.of(context).colorScheme.inversePrimary,
+         backgroundColor: Colors.black,
 
-           title: const Text('GITHUB REPOSITORIES'),
+           title: const Text('GITHUB REPOSITORIES',
+           style: TextStyle(
+             color: Colors.white,
+           ),),
+         iconTheme: const IconThemeData(color: Colors.white),
        ),
       body:
         Center(

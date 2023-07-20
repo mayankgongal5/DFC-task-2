@@ -18,8 +18,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -73,6 +75,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var searchText = TextEditingController();
   late FutureOr<Welcome> futurerepo ;
   @override
   void initState() {
@@ -85,16 +88,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.tealAccent,
-        title: const Text("DFC-Task 2"),
+        backgroundColor: Colors.black,
+        title: const Text("DFC-Task 2",
+        style: TextStyle(
+          color: Colors.white,
+        ),),
       ),
       body: Container(
         decoration: const BoxDecoration(color: Colors.black),
         child: SlidingUpPanel(
+          minHeight: 100,
           maxHeight: 400,
           backdropEnabled: true,
           backdropColor: Colors.black,
-          backdropOpacity: 0.6,
+          backdropOpacity: 0.8,
           backdropTapClosesPanel: true,
           color: Colors.black,
           renderPanelSheet: false,
@@ -104,18 +111,107 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    height: 250,
-                    width: 250,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(120),
-                        image: const DecorationImage(
-                         image: AssetImage('assets/pictures/my.jpeg'),
-                         fit: BoxFit.scaleDown,
-                     ),
-                  )
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        style: const TextStyle(
+                          color: Colors.white
+                        ),
+                          keyboardType: TextInputType.text,
+                          controller: searchText,
+                          decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(25),
+                                  borderSide: const BorderSide(
+                                    color: Colors.blue,
+                                    width: 3,
+
+                                  )
+                              ) ,
+                              hintText: "Search ",
+                              hintStyle: const TextStyle(color: Colors.grey),
+                              prefixIcon: const Icon(Icons.search_off_sharp,color: Colors.white),
+
+
+
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+
+
+                              )
+                          )
+
+
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Container(
+                            height: 250,
+                            width: 250,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(120),
+                                image: const DecorationImage(
+                                 image: AssetImage('assets/pictures/my.jpeg'),
+                                 fit: BoxFit.scaleDown,
+                             ),
+                          )
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 15,top: 15),
+                        child: Text('Mayank Ashok Gongal',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontStyle: FontStyle.normal
+                          ),
+
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text('Government College of Engineering Nagpur',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontStyle: FontStyle.normal
+                          ),),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text('B.tech Computer Science'
+                          ,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontStyle: FontStyle.normal
+                          ),),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text('Skills: Flutter,Video Editing,Java'
+                          ,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontStyle: FontStyle.normal
+                          ),),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text('This is Task 2 of DFC 2023'
+                          ,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontStyle: FontStyle.normal
+                          ),),
+                      ),
+                    ],
+                  ),
                 ),
               ),
 
@@ -141,12 +237,13 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
             child: const Center(
               child: Text(
-                "Connect With Me",
+                "Connect With Me swip up",
                 style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: (30),
+                  color: Colors.black,
+                  fontSize: (25),
                 ),
               ),
+
             ),
           ),
         ],
@@ -179,7 +276,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: InkWell(
                         onTap: () {
                           // make sure you add the url with the http://
-                          launchURL("https://api.github.com/users/mayankgongal5/repos");
+                          launchURL("https://www.instagram.com/hell_ew.dmg/");
                         },
                         child: Container(
                             height: 100,
@@ -280,7 +377,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: InkWell(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder:(BuildContext context){
-                              return homepage();
+                              return const homepage();
                             }));
                           },
                           child: Container(
@@ -297,8 +394,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                     ],
+
                   ),
+
                 ),
+
               ),
 
             ],
