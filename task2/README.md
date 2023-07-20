@@ -1,16 +1,13 @@
 # task2
 
-A new Flutter project.
+# Dart Flutter Chowk Task - 2
+## Details:
+**Name:** Mayank Ashok Gongal
+**College:** Government College Of Engineering Nagpur
+**Year:** 1st
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project Details:
+**Description:** I have developed my portfolio application. 
+**Tech Stack:** Flutter
+**Figma Link:** (Figma UI Link)[/add your link here, the link should be clickable]
+**GitHub Repo Link:** [Project Repo](https://github.com/mayankgongal5/DFC-task-2)
