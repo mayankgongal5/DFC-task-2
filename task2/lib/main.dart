@@ -1,12 +1,10 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:task2/homepage.dart';
-import 'package:task2/modle/repo.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:open_url/open_url.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'task2',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -30,12 +28,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
 
 // final Uri _url = Uri.parse('https://flutter.dev');
 // Future<void> _launchURL(String url) async {
@@ -54,16 +46,6 @@ Future launchURL(String url) async {
     throw Exception("Can not launch $uri");
   }
 }
-FutureOr<Welcome>fetchRepos() async {
-  final result = await openUrl('https://github.com/renatoathaydes/open_url');
-  if (result.exitCode == 200) {
-    print(result.exitCode);
-    return Welcome.fromJson(json.decode(result.exitCode as String));
-  } else {
-    throw Exception('Failed to fetch repos!');
-
-  }
-}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -75,15 +57,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var searchText = TextEditingController();
-  late FutureOr<Welcome> futurerepo ;
-  @override
-  void initState() {
-    super.initState();
-    futurerepo =fetchRepos();
-  }
-
-
+  var sendText = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -377,7 +351,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.black
                     ),
                     keyboardType: TextInputType.text,
-                    controller: searchText,
+                    controller: sendText,
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -387,9 +361,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
                             )
                         ) ,
-                        hintText: "your e-mail ",
+                        hintText: "your message ",
                         hintStyle: const TextStyle(color: Colors.grey),
                         prefixIcon: const Icon(Icons.email,color: Colors.black),
+                        suffixIcon: IconButton(
+                          icon: const Icon(Icons.send),
+                          onPressed:(){
+
+                          },
+                        ) ,
 
 
 
