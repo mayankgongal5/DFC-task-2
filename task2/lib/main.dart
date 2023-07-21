@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
         decoration: const BoxDecoration(color: Colors.black),
         child: SlidingUpPanel(
           minHeight: 100,
-          maxHeight: 400,
+          maxHeight: 480,
           backdropEnabled: true,
           backdropColor: Colors.black,
           backdropOpacity: 0.8,
@@ -116,36 +116,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
-                      TextField(
-                        style: const TextStyle(
-                          color: Colors.white
-                        ),
-                          keyboardType: TextInputType.text,
-                          controller: searchText,
-                          decoration: InputDecoration(
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: const BorderSide(
-                                    color: Colors.blue,
-                                    width: 3,
-
-                                  )
-                              ) ,
-                              hintText: "Search ",
-                              hintStyle: const TextStyle(color: Colors.grey),
-                              prefixIcon: const Icon(Icons.search_off_sharp,color: Colors.white),
-
-
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(25),
-
-
-                              )
-                          )
-
-
-                      ),
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: Container(
@@ -320,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             decoration: BoxDecoration(
                               image: const DecorationImage(
                                 image: AssetImage('assets/icons/twit2.png'),
-                                fit: BoxFit.fitHeight,
+                                fit: BoxFit.scaleDown,
                               ),
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.white,
@@ -366,7 +336,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
                                   image: AssetImage('assets/icons/link2.png'),
-                                  fit: BoxFit.contain,
+                                  fit: BoxFit.scaleDown,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white,
@@ -386,7 +356,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
                                   image: AssetImage('assets/icons/api.png'),
-                                  fit: BoxFit.contain,
+                                  fit: BoxFit.scaleDown,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white,
@@ -400,8 +370,42 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8,right: 8,bottom: 20,top: 15),
+                child: TextField(
+                    style: const TextStyle(
+                        color: Colors.black
+                    ),
+                    keyboardType: TextInputType.text,
+                    controller: searchText,
+                    decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.blue,
+                              width: 3,
+
+                            )
+                        ) ,
+                        hintText: "your e-mail ",
+                        hintStyle: const TextStyle(color: Colors.grey),
+                        prefixIcon: const Icon(Icons.email,color: Colors.black),
+
+
+
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+
+
+                        )
+                    )
+
+
+                ),
+              ),
 
             ],
+
           ),
         ));
   }
