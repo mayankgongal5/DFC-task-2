@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.black,
         title: const Text("DFC-Task 2",
         style: TextStyle(
+
           color: Colors.white,
         ),),
       ),
