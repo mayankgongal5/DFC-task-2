@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "a4e97d93a279c2857c2316e83b4063998c679b5816f3374307dfc7523c717e78"
+build_start_time: [1691130229, 75004000]
+build_end_time: [1691130234, 204870000]
+inputs:
+  "/Users/mayankgongal/Documents/flutter development/for github 2/DFC-task-2/task2/macos/Flutter/GeneratedPluginRegistrant.swift": [1691130184, 46148374]
+  "/Users/mayankgongal/Documents/flutter development/for github 2/DFC-task-2/task2/macos/Runner/AppDelegate.swift": [1681949587, 0]
+  "/Users/mayankgongal/Documents/flutter development/for github 2/DFC-task-2/task2/macos/Runner/MainFlutterWindow.swift": [1683826494, 158557388]

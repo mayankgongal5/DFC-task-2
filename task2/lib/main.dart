@@ -285,7 +285,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            launchURL("http://github.com/mayankgongal5");
+                            launchURL("https://github.com/mayankgongal5");
                           },
                           child: Container(
                               height: 100,
