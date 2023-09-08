@@ -39,6 +39,8 @@ class MyApp extends StatelessWidget {
 //     throw "Can not launch url";
 //   }
 // }
+//checking diff
+// hello 
 Future launchURL(String url) async {
   // you need to parse the url
   final Uri uri = Uri.parse(url);
